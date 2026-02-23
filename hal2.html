@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Informatika | Estetik</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #ff85b3;
+            --soft-pink: #ffe4f0;
+            --dark-pink: #880e4f;
+            --glass: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Background dengan gradasi lebih lembut dan dekoratif */
+            background: radial-gradient(circle at top left, #fff0f6, #ffc2dc);
+            overflow-x: hidden;
+        }
+
+        /* Ornamen Lingkaran Background */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff9ecb, #ffc2dc);
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+
+        body::before { width: 300px; height: 300px; top: 10%; left: 10%; }
+        body::after { width: 250px; height: 250px; bottom: 10%; right: 10%; }
+
+        /* CARD GLASSMORPHISM */
+        .container {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            width: 550px;
+            box-shadow: 0 20px 50px rgba(214, 51, 132, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* JUDUL */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        /* GARIS CUSTOM */
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary-pink);
+            margin: 0 auto 25px;
+            border-radius: 10px;
+        }
+
+        /* DESKRIPSI */
+        .deskripsi {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            text-align: center; /* Lebih estetik untuk card info singkat */
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        /* TOMBOL */
+        .button-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 14px 40px;
+            border: none;
+            border-radius: 50px; /* Round pill style */
+            background: var(--dark-pink);
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(136, 14, 79, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background: #ab1264;
+            box-shadow: 0 15px 30px rgba(136, 14, 79, 0.3);
+        }
+
+        /* ANIMASI */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:600px){
+            .container {
+                width: 90%;
+                padding: 40px 25px;
+            }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Tentang Informatika</h2>
+    <div class="divider"></div>
+
+    <div class="deskripsi">
+        <p>
+            Informatika adalah seni mengolah data menjadi informasi bermakna melalui keajaiban teknologi. 
+            Lebih dari sekadar kode, ini adalah tentang menciptakan solusi cerdas, membangun masa depan digital, 
+            dan menjembatani ide manusia ke dalam realitas sistem yang efisien.
+        </p>
+        <br>
+        <p>
+            Sebagai pengembang masa depan, fokus saya adalah merancang pengalaman digital yang tidak hanya 
+            fungsional, tetapi juga indah dan bermakna bagi setiap penggunanya.
+        </p>
+    </div>
+
+    <div class="button-group">
+        <button onclick="kembali()">← Kembali</button>
+    </div>
+</div>
+
+<script>
+function kembali(){
+    // Menambahkan efek fade out sebelum pindah halaman
+    document.querySelector('.container').style.opacity = '0';
+    document.querySelector('.container').style.transition = '0.5s';
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 500);
+}
+</script>
+
+</body>
+</html>
